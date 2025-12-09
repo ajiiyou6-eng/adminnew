@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>XINNDESAINER — Premium Logo & Website Design</title>
+
+<style>
+/* ROOT */
+:root{
+  --bg:#020007;
+  --card:rgba(255,255,255,0.03);
+  --muted:#9fb0c9;
+  --accent1:#ff0058;
+  --accent2:#00f0ff;
+  --accent3:#7cff00;
+  --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.navbar{
+  width:100%; padding:14px 24px;
+  position:fixed;top:0;left:0;
+  z-index:10;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.nav-left{
+  font-size:22px;
+  font-weight:800;
+  color:var(--accent2);
+}
+.nav-right a{
+  margin-left:18px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s;
+}
+.nav-right a:hover{color:var(--accent2)}
+
+/* CANVAS */
+#particles{
+  position:fixed;inset:0;z-index:-10;
+}
+
+/* HERO */
+.center-box{
+  text-align:center;
+  margin-top:120px;
+  padding:20px;
+}
+.glow{
+  font-size:clamp(40px,6vw,80px);
+  font-weight:900;
+  animation:rgbGlow 4s infinite linear;
+}
+@keyframes rgbGlow{
+  0%{text-shadow:0 0 20px #ff00cc}
+  25%{text-shadow:0 0 20px #00f0ff}
+  50%{text-shadow:0 0 20px #7cff00}
+  75%{text-shadow:0 0 20px #ffae00}
+  100%{text-shadow:0 0 20px #ff00cc}
+}
+.subtitle{color:var(--muted);margin-top:6px;font-size:17px}
+.price{color:var(--muted);margin-top:10px}
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 26px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  border-radius:14px;
+  color:#021218;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* MARQUEE */
+.marquee{
+  margin:28px auto;
+  max-width:var(--max-width);
+  padding:12px;
+  background:rgba(255,255,255,0.05);
+  border-radius:14px;
+  overflow:hidden;
+}
+.marquee span{
+  display:inline-block;
+  white-space:nowrap;
+  animation:run 14s linear infinite;
+  font-weight:700;
+}
+@keyframes run{
+  0%{transform:translateX(100%)}
+  100%{transform:translateX(-100%)}
+}
+
+/* PRODUK */
+.produk{
+  max-width:var(--max-width);
+  margin:40px auto;
+  padding:20px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:16px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+.muted{color:var(--muted);font-size:14px}
+.price-tag{
+  margin-top:8px;
+  font-weight:800;
+  color:var(--accent2);
+}
+.mini-btn{
+  margin-top:12px;
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  color:#021218;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* PORTFOLIO */
+.preview-img{
+  width:100%;
+  border-radius:12px;
+  transition:.25s;
+  margin-bottom:10px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+.preview-img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(0,255,255,0.4);
+}
+
+/* FORM */
+.order-box{
+  max-width:var(--max-width);
+  margin:50px auto;
+  padding:20px;
+}
+.order-form{
+  padding:22px;
+  background:rgba(255,255,255,0.06);
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+.order-form label{
+  display:block;
+  margin-top:14px;
+  color:var(--muted);
+}
+.order-form input,
+.order-form select,
+.order-form textarea{
+  width:100%; padding:12px;
+  margin-top:6px;
+  border-radius:12px;
+  border:none;
+  background:rgba(0,0,0,0.4);
+  color:#fff;
+}
+.btn-order{
+  margin-top:16px;
+  padding:14px;
+  width:100%;
+  border-radius:12px;
+  border:none;
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  color:#021218;
+  font-weight:900;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* FOOTER */
+.footer{
+  margin:40px auto;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-left">XINNDESAINER</div>
+  <div class="nav-right">
+    <a href="#home">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#order">Pemesanan</a>
+    <a href="#orderweb">Pemesanan Web</a>
+  </div>
+</nav>
+
+<canvas id="particles"></canvas>
+
+<!-- HERO -->
+<div id="home" class="center-box">
+  <h1 class="glow">XINNDESAINER</h1>
+  <p class="subtitle">Jasa desain logo server game & logo sirkel premium.</p>
+  <p class="price">Harga mulai <strong>2K – 7K</strong></p>
+  <a href="https://wa.me/6287867162459" target="_blank" class="btn">Buat Logo Sekarang</a>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <span>✨ GRAND OPENING — DISKON SPESIAL DESAIN LOGO MULAI 2K ✨</span>
+</div>
+
+<!-- PRODUK -->
+<section id="produk" class="produk">
+  <h2>Paket Desain Logo</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Paket Express</h3>
+      <p class="muted">1 konsep • revisi 1x • pengerjaan cepat</p>
+      <p class="price-tag">Rp 2.000</p>
+      <a class="mini-btn" href="https://wa.me/6287867162459?text=Saya%20ingin%20Paket%20Express">Pesan</a>
+    </div>
+
+    <div class="card">
+      <h3>Paket Basic</h3>
+      <p class="muted">2 konsep • revisi 2x • file PNG HD</p>
+      <p class="price-tag">Rp 5.000</p>
+      <a class="mini-btn" href="https://wa.me/6287867162459?text=Saya%20ingin%20Paket%20Basic">Pesan</a>
+    </div>
+
+    <div class="card">
+      <h3>Paket Premium</h3>
+      <p class="muted">5 konsep • revisi bebas • file lengkap AI/PNG</p>
+      <p class="price-tag">Rp 7.000</p>
+      <a class="mini-btn" href="https://wa.me/6287867162459?text=Saya%20ingin%20Paket%20Premium">Pesan</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="produk">
+  <h2>Contoh Desain Logo</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://files.catbox.moe/6q4y17.jpeg" class="preview-img">
+      <h3>Contoh 1</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://files.catbox.moe/44b0ig.jpeg" class="preview-img">
+      <h3>Contoh 2</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://files.catbox.moe/ecbjvq.jpeg" class="preview-img">
+      <h3>Contoh 3</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM LOGO -->
+<section id="order" class="order-box">
+  <h2>Form Pemesanan Logo</h2>
+  <div class="order-form">
+
+    <label>Nama Anda</label>
+    <input id="nama">
+
+    <label>Nama Brand</label>
+    <input id="brand">
+
+    <label>Warna Logo</label>
+    <input id="warna">
+
+    <label>Gaya Logo</label>
+    <select id="style">
+      <option>Minimalis</option>
+      <option>RGB Glow</option>
+      <option>Modern</option>
+      <option>3D</option>
+      <option>Mascot</option>
+      <option>Elegant</option>
+    </select>
+
+    <label>Pilih Paket</label>
+    <select id="paket">
+      <option>Paket Express - 2K</option>
+      <option>Paket Basic - 5K</option>
+      <option>Paket Premium - 7K</option>
+    </select>
+
+    <label>Detail Custom</label>
+    <textarea id="detail"></textarea>
+
+    <label>Catatan Tambahan</label>
+    <textarea id="catatan"></textarea>
+
+    <button onclick="kirimWA()" class="btn-order">Kirim via WhatsApp</button>
+
+  </div>
+</section>
+
+<!-- PEMESANAN WEBSITE -->
+<section id="orderweb" class="order-box">
+  <h2>Pemesanan Website</h2>
+
+  <div class="order-form">
+
+    <label>Nama Anda</label>
+    <input id="w_nama" placeholder="Nama lengkap">
+
+    <label>Jenis Website</label>
+    <select id="w_jenis">
+      <option>Portfolio</option>
+      <option>Toko Online</option>
+      <option>Landing Page</option>
+      <option>Company Profile</option>
+      <option>Custom Full</option>
+    </select>
+
+    <label>Fitur yang Dibutuhkan</label>
+    <textarea id="w_fitur" placeholder="Contoh: login user, admin panel, pembayaran, database..."></textarea>
+
+    <label>Budget</label>
+    <select id="w_budget">
+      <option>20K – 50K</option>
+      <option>50K – 100K</option>
+      <option>100K – 300K</option>
+      <option>300K – 1JT</option>
+      <option>1JT+</option>
+    </select>
+
+    <label>Deskripsi Tambahan</label>
+    <textarea id="w_catatan" placeholder="Tambahan detail..."></textarea>
+
+    <button onclick="kirimWAWeb()" class="btn-order"
+      style="background:linear-gradient(90deg,#00f0ff,#ff009d);">
+      Kirim Permintaan Website (WA)
+    </button>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <small>© <span id="year"></span> XINNDESAINER</small>
+</footer>
+
+<script>
+/* WHATSAPP LOGO */
+function kirimWA(){
+  let nama = document.getElementById("nama").value;
+  let brand = document.getElementById("brand").value;
+  let warna = document.getElementById("warna").value;
+  let style = document.getElementById("style").value;
+  let paket = document.getElementById("paket").value;
+  let detail = document.getElementById("detail").value;
+  let catatan = document.getElementById("catatan").value;
+
+  let pesan = 
+`Halo Admin XINNDESAINER,
+Saya ingin memesan desain logo.
+
+Nama: ${nama}
+Brand: ${brand}
+Warna: ${warna}
+Gaya: ${style}
+Paket: ${paket}
+
+Detail custom:
+${detail}
+
+Catatan tambahan:
+${catatan}`;
+
+  window.open("https://wa.me/6287867162459?text="+encodeURIComponent(pesan));
+}
+
+/* WHATSAPP WEBSITE */
+function kirimWAWeb(){
+  let nama = document.getElementById("w_nama").value;
+  let jenis = document.getElementById("w_jenis").value;
+  let fitur = document.getElementById("w_fitur").value;
+  let budget = document.getElementById("w_budget").value;
+  let catatan = document.getElementById("w_catatan").value;
+
+  let pesan =
+`Halo Admin XINNDESAINER,
+Saya ingin memesan WEBSITE.
+
+Nama: ${nama}
+Jenis Website: ${jenis}
+Fitur yang Dibutuhkan:
+${fitur}
+
+Budget: ${budget}
+
+Catatan tambahan:
+${catatan}`;
+
+  window.open("https://wa.me/6287867162459?text=" + encodeURIComponent(pesan));
+}
+
+/* PARTICLES */
+(function(){
+  const canvas=document.getElementById("particles");
+  const c=canvas.getContext("2d");
+  let w=canvas.width=innerWidth;
+  let h=canvas.height=innerHeight;
+
+  const particles=[];
+  for(let i=0;i<100;i++){
+    particles.push({
+      x:Math.random()*w,
+      y:Math.random()*h,
+      r:Math.random()*2+1,
+      vx:(Math.random()-.5)*0.6,
+      vy:(Math.random()-.5)*0.6,
+      color:`rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.8)`
+    });
+  }
+
+  window.addEventListener("resize",()=>{
+    w=canvas.width=innerWidth;
+    h=canvas.height=innerHeight;
+  });
+
+  function loop(){
+    c.fillStyle="rgba(0,0,10,0.25)";
+    c.fillRect(0,0,w,h);
+
+    particles.forEach(p=>{
+      c.beginPath();
+      c.arc(p.x,p.y,p.r,0,Math.PI*2);
+      c.fillStyle=p.color;
+      c.fill();
+
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=w;
+      if(p.x>w)p.x=0;
+      if(p.y<0)p.y=h;
+      if(p.y>h)p.y=0;
+    });
+
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  document.getElementById("year").textContent=new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
